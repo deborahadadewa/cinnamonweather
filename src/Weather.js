@@ -4,8 +4,8 @@ import "./Weather.css"
 
 export default function weather(){
     return(<div className="Weather">
-        <form input-group mt-2>
-            <input type="search" placeholder="Enter city" />
+        <form className="input-group mt-2">
+            <input className= "form-control" type="search" placeholder="Enter city" autoFocus/>
             <input type="submit" value="Search" />
         </form>
 
@@ -16,9 +16,9 @@ export default function weather(){
             <li className="description">Light rain showers </li>
         </ul>
 
-        <ul className="overview">
-            <li>Humidity: 74%</li>
-            <li className="description"> Wind: 18 km/h</li>
+        <ul className="row overview">
+            <li classsName="col-4">Humidity:74%</li>
+            <li className="col-4">Wind:18 km/h</li>
         </ul>
     </div>);
 }
