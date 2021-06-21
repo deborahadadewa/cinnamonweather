@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import ReactAnimatedWeather from 'react-animated-weather';
 import WeatherIcon from "./WeatherIcon";
 import DateTimeFormat from "./DateTimeFormat";
 import Temperature from "./Temperature";
@@ -25,14 +24,14 @@ export default function WeatherInfo(props){
                 <li><DateTimeFormat date = {props.weather.date}/></li>           
             </ul>
 
-            <button onClick={showOverview}>Toggle overview</button>
+            <button className="overview-toggle" onClick={showOverview}>Toggle overview</button>
 
             {
             overviewVisibility ?
                  
             <ul className="row overview">
-                <li className="col">Humidity: 74%</li>
-                <li className="col">Wind: 18 km/h</li>
+                <li className="col-4">Humidity: {props.weather.humidity}%</li>
+                <li className="col-4">Wind: {Math.round(props.weather.wind)} km/h</li>
             </ul> : " "  
             }
            

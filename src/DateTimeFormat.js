@@ -3,7 +3,7 @@ import React from "react";
 export default function DateTimeFormat(props){
 
     function addZeroes(num){
-        return ( num < 10 ? `0{num}` : num );
+        return ( num < 10 ? `0${num}` : num );
     }
 
     function TwelveHourTime(hours){

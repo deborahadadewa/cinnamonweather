@@ -44,8 +44,8 @@ export default function Weather(props){
         return(
             <div className="Weather">
                 <form className="input-group mt-2 search-form" onSubmit={handleSubmit}>
-                    <input className= "form-control search-input" type="search" placeholder="Enter city" autoFocus onChange={updateCity}/>
-                    <button type="submit" >
+                    <input className="form-control search-input" type="search" placeholder="Enter city" onChange={updateCity}/>
+                    <button className="search-button" type="submit" >
                     <i className="fa fa-search search-button" /></button>   
                 </form>
 

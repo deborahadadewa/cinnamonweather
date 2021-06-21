@@ -35,10 +35,21 @@
 }
 
 .Weather button {
-    background: transparent;
     border: none;
     color: #251a7573;
+}
+
+.Weather button.search-button {
+    background: transparent;
     padding-right: 1rem;
+}
+
+.Weather button.overview-toggle {
+    background: transparent;
+    box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
+    font-size: 0.9em;
+    margin-bottom: rem;
+    padding: 0.3rem 1rem;
 }
 
 .Weather h1 {
@@ -76,14 +87,21 @@
     color: #907988;
 }
 
+.Weather .overview {
+    box-shadow: -1px 4px 5px rgb(144 121 136 / 10%);
+    padding: 1rem 0.2rem;
+}
+
 .Weather ul {
     display: block;
     list-style: none;
-    padding-left: 0%;
+    padding: 0;
+    margin: 0;
 }
 
 .Weather .overview li {
     display: inline;
     font-size: 1em;
     font-weight: 300;
+    margin: 0;
 }
