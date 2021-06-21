@@ -76,10 +76,6 @@
     color: #907988;
 }
 
-.Weather a:active {
-    font-weight: bold;
-}
-
 .Weather ul {
     display: block;
     list-style: none;
