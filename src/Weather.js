@@ -1,24 +1,63 @@
-import React from "react";
-import "./Weather.css"
+import React, { useState } from "react";
+import "./Weather.css";
+import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 
 
-export default function weather(){
-    return(<div className="Weather">
-        <form className="input-group mt-2">
-            <input className= "form-control" type="search" placeholder="Enter city" autoFocus/>
-            <input type="submit" value="Search" />
-        </form>
+export default function Weather(props){    
+    const [city, setCity] = useState(props.defaultCity); 
+    const [weather, setWeather] = useState({ready: false});
+  
 
-        <h1>Calgary</h1>
+    function handleResponse(response){
+        setWeather({            
+            temperature: response.data.main.temp,
+            wind: response.data.wind.speed,
+            humidity: response.data.main.humidity,
+            description: response.data.weather[0].description,
+            date: new Date(response.data.dt * 1000),
+            iconId: response.data.weather[0].icon,
+            city: response.data.name,            
+            ready: true
+        });
 
-        <ul>
-            <li> Sunday, 8:00am</li>
-            <li className="description">Light rain showers </li>
-        </ul>
+    }
+    
+    function search(){ 
+        const apiKey ="4c6055c670b7ec879ff0e997cefecf2a";
+        const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(url).then(handleResponse);
+    }
+    // 
 
-        <ul className="row overview">
-            <li classsName="col-4">Humidity:74%</li>
-            <li className="col-4">Wind:18 km/h</li>
-        </ul>
-    </div>);
+    function handleSubmit(event){
+        event.preventDefault();
+        search();
+    }
+
+    function updateCity(event){
+        setCity(event.target.value);
+    }
+
+    if(weather.ready){
+        console.log("weather icon is:"+ weather.icon);
+        return(
+            <div className="Weather">
+                <form className="input-group mt-2 search-form" onSubmit={handleSubmit}>
+                    <input className= "form-control search-input" type="search" placeholder="Enter city" autoFocus onChange={updateCity}/>
+                    <button type="submit" >
+                    <i className="fa fa-search search-button" /></button>   
+                </form>
+
+                <WeatherInfo weather={weather}/>
+            </div>
+        );
+    }else{
+        search();
+        return(<div>
+            Loading...
+        </div>);
+    }
+
+    
 }
