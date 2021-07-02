@@ -17,10 +17,10 @@ export default function Weather(props){
             description: response.data.weather[0].description,
             date: new Date(response.data.dt * 1000),
             iconId: response.data.weather[0].icon,
-            city: response.data.name,            
+            city: response.data.name, 
+            coordinates: response.data.coord,           
             ready: true
         });
-
     }
     
     function search(){ 
@@ -28,7 +28,6 @@ export default function Weather(props){
         const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(url).then(handleResponse);
     }
-    // 
 
     function handleSubmit(event){
         event.preventDefault();
@@ -39,8 +38,7 @@ export default function Weather(props){
         setCity(event.target.value);
     }
 
-    if(weather.ready){
-        console.log("weather icon is:"+ weather.icon);
+    if(weather.ready){        
         return(
             <div className="Weather">
                 <form className="input-group mt-2 search-form" onSubmit={handleSubmit}>
@@ -59,5 +57,4 @@ export default function Weather(props){
         </div>);
     }
 
-    
 }

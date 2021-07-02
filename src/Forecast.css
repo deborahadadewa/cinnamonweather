@@ -1,0 +1,24 @@
+.Forecast {
+    opacity: 0.95;
+    font-size: 0.95em;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.Forecast span {
+    font-size: 0.95em;
+}
+
+.Forecast-day {
+    font-weight: 300;
+    padding-bottom: 0.3em;
+}
+
+.Forecast-temperatures {
+    padding: 0;
+}
+
+.Forecast .lo {
+    opacity: 0.8;
+    margin-left: 0.3em;
+}

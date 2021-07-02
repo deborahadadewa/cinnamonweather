@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import WeatherIcon from "./WeatherIcon";
 import DateTimeFormat from "./DateTimeFormat";
 import Temperature from "./Temperature";
+import Forecast from "./Forecast";
 
 
 export default function WeatherInfo(props){
@@ -9,13 +10,14 @@ export default function WeatherInfo(props){
 
     function showOverview(){
         overviewVisibility ? setOverviewVisibility(false) : setOverviewVisibility(true);
-
     }
-    return(<div className="weatherInfo">
+    
+    return(
+        <div className="weatherInfo">
 
             <h3>{props.weather.city}</h3>
 
-            <WeatherIcon iconId= {props.weather.iconId} />
+            <WeatherIcon iconId= {props.weather.iconId} size= {100}/>
 
             <Temperature celsius={props.weather.temperature} />
 
@@ -28,12 +30,15 @@ export default function WeatherInfo(props){
 
             {
             overviewVisibility ?
-                 
-            <ul className="row overview">
-                <li className="col-4">Humidity: {props.weather.humidity}%</li>
-                <li className="col-4">Wind: {Math.round(props.weather.wind)} km/h</li>
-            </ul> : " "  
+            <div>  
+                <ul className="row overview">
+                    <li className="col-4">Humidity: {props.weather.humidity}%</li>
+                    <li className="col-4">Wind: {Math.round(props.weather.wind)} km/h</li>
+                </ul> 
+                <Forecast coordinates={props.weather.coordinates}/>
+            </div>  : " "  
             }
            
-    </div>);
+        </div>
+    );
 }

@@ -1,7 +1,8 @@
 .Weather {
+    background: #F9F7FE;
     background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
     box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
-    color: #251a7573;
+    color: #915A3C;
     display: block;
     font-family: proxima-nova, sans-serif;
     font-weight: 300;
@@ -19,7 +20,7 @@
 
 .Weather form {
     box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
-    color: #251a7573;
+    color: #915a3c;
     margin-bottom: 1.5rem;
 }
 
@@ -27,28 +28,29 @@
 .Weather input {
     background: transparent;
     border: none;
-    color: #251a7573;
+    color: #915a3c;
 }
 
 .Weather input::placeholder {
-    color: #251a7573;
+    color: #915a3c;
     font-weight: 300;
     font-size: 1em;
 }
 
 .Weather button {
     border: none;
-    color: #251a7573;
 }
 
 .Weather button.search-button {
     background: transparent;
+    color: #915a3c;
     padding-right: 1rem;
 }
 
 .Weather button.overview-toggle {
     background: transparent;
     box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
+    color: #915A3C;
     font-size: 0.9em;
     padding: 0.3rem 1rem;
 }
@@ -69,6 +71,7 @@
 }
 
 .Weather h3 {
+    color: #915a3c;
     font-size: 1.2em;
     font-weight: 300;
     margin-bottom: 1.5rem;
@@ -76,7 +79,11 @@
     text-transform: uppercase;
 }
 
-.Weather span {
+.Weather p {
+    opacity: 0.8;
+}
+
+.Weather span.temp-unit {
     font-size: 0.15em;
     font-weight: normal;
     margin-left: 0;
@@ -85,12 +92,13 @@
 }
 
 .Weather a {
-    color: #907988;
+    color: #B1872F;
+    text-decoration: none;
 }
 
 .Weather .overview {
     box-shadow: -1px 4px 5px rgb(144 121 136 / 10%);
-    padding: 2rem 0.2rem 1rem;
+    padding: 1rem 0.2rem 0.8rem;
 }
 
 .Weather ul {
@@ -102,7 +110,8 @@
 
 .Weather .overview li {
     display: inline;
-    font-size: 1em;
+    font-size: 0.95em;
     font-weight: 300;
     margin: 0;
+    opacity: 0.8;
 }
