@@ -1,6 +1,7 @@
 .Weather {
     background: #F9F7FE;
     background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+    border-radius: 50px;
     box-shadow: -1px 4px 5px rgb(0 0 0 / 10%);
     color: #915A3C;
     display: block;
@@ -12,6 +13,12 @@
     padding: 2rem;
     padding-bottom: 3rem;
     text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .Weather {
+        border-radius: 3rem;
+    }
 }
 
 .Weather canvas {

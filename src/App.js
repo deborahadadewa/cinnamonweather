@@ -9,8 +9,8 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather defaultCity="Tema"/>
-        <footer>This app was created by Deborah Botchwey and is <a href="https://github.com/deborahbotchwey/weather-app.git" className="App">open-sourced</a></footer>     
+        <Weather defaultCity="Tema" />
+        <footer>This app was created by Deborah Botchwey and is <a href="https://github.com/deborahbotchwey/react-weather-app.git" className="App">open-sourced</a></footer>
       </div>
     </div>
   );
